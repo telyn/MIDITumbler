@@ -1,0 +1,86 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="4.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <ItemGroup>
+    <Filter Include="Source Files">
+      <UniqueIdentifier>{347db794-71c4-4cc3-8492-bdc8d6df1021}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="VSTGL">
+      <UniqueIdentifier>{393448bc-37ba-4414-8025-02cdd4bf2ec5}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="VST">
+      <UniqueIdentifier>{a700ae49-72b6-4844-8caa-ae2cf5c1500d}</UniqueIdentifier>
+    </Filter>
+  </ItemGroup>
+  <ItemGroup>
+    <ClCompile Include="VSTGL\VSTGLEditor.cpp">
+      <Filter>VSTGL</Filter>
+    </ClCompile>
+    <ClCompile Include="VSTGL\VSTGLTimer.cpp">
+      <Filter>VSTGL</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\lib\vstsdk2.4\public.sdk\source\vst2.x\audioeffect.cpp">
+      <Filter>VST</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\lib\vstsdk2.4\public.sdk\source\vst2.x\audioeffectx.cpp">
+      <Filter>VST</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\lib\vstsdk2.4\public.sdk\source\vst2.x\vstplugmain.cpp">
+      <Filter>VST</Filter>
+    </ClCompile>
+    <ClCompile Include="TumblerPlugin.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="TumblerEditor.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="TumblerNote.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="TumblerController.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="rgbhsv.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+  </ItemGroup>
+  <ItemGroup>
+    <ClInclude Include="VSTGL\VSTGLEditor.h">
+      <Filter>VSTGL</Filter>
+    </ClInclude>
+    <ClInclude Include="VSTGL\VSTGLTimer.h">
+      <Filter>VSTGL</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\lib\vstsdk2.4\public.sdk\source\vst2.x\aeffeditor.h">
+      <Filter>VST</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\lib\vstsdk2.4\public.sdk\source\vst2.x\audioeffect.h">
+      <Filter>VST</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\lib\vstsdk2.4\public.sdk\source\vst2.x\audioeffectx.h">
+      <Filter>VST</Filter>
+    </ClInclude>
+    <ClInclude Include="TumblerPlugin.h">
+      <Filter>Source Files</Filter>
+    </ClInclude>
+    <ClInclude Include="TumblerEditor.h">
+      <Filter>Source Files</Filter>
+    </ClInclude>
+    <ClInclude Include="TumblerNote.h">
+      <Filter>Source Files</Filter>
+    </ClInclude>
+    <ClInclude Include="rgbhsv.h">
+      <Filter>Source Files</Filter>
+    </ClInclude>
+    <ClInclude Include="TumblerController.h">
+      <Filter>Source Files</Filter>
+    </ClInclude>
+  </ItemGroup>
+  <ItemGroup>
+    <CustomBuild Include="vstplug.def">
+      <Filter>Source Files</Filter>
+    </CustomBuild>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="ClassDiagram1.cd" />
+  </ItemGroup>
+</Project>

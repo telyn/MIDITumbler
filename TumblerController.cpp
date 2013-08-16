@@ -124,12 +124,13 @@ void TumblerController::addNote(int midi_note) {
 	bd.type = b2_dynamicBody;
 	b2Body *body = world.CreateBody(&bd);
 	b2CircleShape shape;
-	shape.m_radius = 0.75f;
+	// this is kinda bad. magic one liner to extract velocity from note.
+	shape.m_radius = 0.3f + ((float)(midi_note >> 8) / 127.0f);
 	shape.m_p = b2Vec2(0.0f, 0.0f);
 	b2FixtureDef def;
 	def.shape = &shape;
 	def.density = 0.1f;
-	def.friction = 0.1f;
+	def.friction = 0.0f;
 	def.filter.categoryBits = 0x1;
 	def.filter.maskBits = 0x3;
 	def.restitution = 0.95f * this->plugin->getParameter(TumblerPlugin::RESTITUTION);
@@ -166,7 +167,9 @@ void TumblerController::timerCallback() {
 
 	for(int i = 0; i < MAX_NOTES; i++) {
 		if(this->notes[i].IsInitialised()) {
-			this->notes[i].GetBody()->GetFixtureList()->SetRestitution(0.95f*this->plugin->getParameter(TumblerPlugin::RESTITUTION));
+			b2Fixture *fixture = this->notes[i].GetBody()->GetFixtureList();
+			fixture->SetRestitution(0.95f*this->plugin->getParameter(TumblerPlugin::RESTITUTION));
+			//fixture->SetFriction(0.0f);
 		}
 	}
 

@@ -484,7 +484,8 @@ void TumblerPlugin::processMIDI(VstInt32 pos)
 			{
 				case 0x90: // note on
 					if(data2 > 0) // velocity > 0
-						this->controller->queueNote(data1);
+						//shouldn't do this here..shush.
+						this->controller->queueNote(data1 | (data2 << 8));
 					else
 						// ignore dat shit
 					break;

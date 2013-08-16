@@ -335,7 +335,7 @@ void TumblerPlugin::getParameterDisplay(VstInt32 index, char *text)
 			sprintf(temp, "%d", (int)(p*127));
 			break;
 		case GRAVITY:
-			sprintf(temp, "%.1f m/s", p*60);
+			sprintf(temp, "%.1f m/s2", p*60);
 			break;
 		case RESTITUTION:
 			sprintf(temp, "%.2f", p*0.95);
@@ -414,7 +414,7 @@ VstInt32 TumblerPlugin::getVendorVersion()
 //----------------------------------------------------------------------------
 VstPlugCategory TumblerPlugin::getPlugCategory()
 {
-    return(kPlugCategEffect);
+	return(kPlugCategEffect);
 }
 
 //----------------------------------------------------------------------------

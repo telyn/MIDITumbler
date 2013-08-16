@@ -47,6 +47,8 @@
     <OutDir>.\Release\</OutDir>
     <IntDir>.\Release\</IntDir>
     <LinkIncremental>true</LinkIncremental>
+    <IncludePath>..\..\lib\Box2D_v2.2.1;..\..\lib\vstsdk2.4;..\..\lib\vstsdk2.4\public.sdk\source\vst2.x;$(IncludePath)</IncludePath>
+    <LibraryPath>..\..\lib\Box2D_v2.2.1\Build\vs2010\bin\Release;$(LibraryPath)</LibraryPath>
   </PropertyGroup>
   <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">
     <ClCompile>
@@ -89,7 +91,7 @@
       <IgnoreAllDefaultLibraries>false</IgnoreAllDefaultLibraries>
       <OutputFile>Debug/$(ProjectName).dll</OutputFile>
       <ImportLibrary>.\Debug\$(ProjectName).lib</ImportLibrary>
-      <AdditionalDependencies>box2d.lib;odbc32.lib;odbccp32.lib;opengl32.lib;glu32.lib;msvcprt.lib;%(AdditionalDependencies)</AdditionalDependencies>
+      <AdditionalDependencies>box2d.lib;opengl32.lib;glu32.lib;msvcprt.lib;%(AdditionalDependencies)</AdditionalDependencies>
       <ModuleDefinitionFile>.\vstplug.def</ModuleDefinitionFile>
     </Link>
   </ItemDefinitionGroup>
@@ -103,11 +105,12 @@
       <SuppressStartupBanner>true</SuppressStartupBanner>
       <WarningLevel>Level3</WarningLevel>
       <AdditionalIncludeDirectories>VSTGL;../../vstsdk2.4/;../../vstsdk2.4/public.sdk/source/vst2.x;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
-      <PreprocessorDefinitions>NDEBUG;STRICT;WIN32;_WINDOWS;%(PreprocessorDefinitions)</PreprocessorDefinitions>
+      <PreprocessorDefinitions>STRICT;WIN32;_WINDOWS;%(PreprocessorDefinitions)</PreprocessorDefinitions>
       <AssemblerListingLocation>.\Release\</AssemblerListingLocation>
-      <PrecompiledHeaderOutputFile>.\Release\MIDITumbler.pch</PrecompiledHeaderOutputFile>
+      <PrecompiledHeaderOutputFile>.\Release\$(ProjectName).pch</PrecompiledHeaderOutputFile>
       <ObjectFileName>.\Release\</ObjectFileName>
       <ProgramDataBaseFileName>.\Release\</ProgramDataBaseFileName>
+      <DebugInformationFormat>ProgramDatabase</DebugInformationFormat>
     </ClCompile>
     <Midl>
       <SuppressStartupBanner>true</SuppressStartupBanner>
@@ -131,10 +134,11 @@
       <SubSystem>Windows</SubSystem>
       <IgnoreAllDefaultLibraries>false</IgnoreAllDefaultLibraries>
       <OutputFile>Release/MIDITumbler.dll</OutputFile>
-      <ImportLibrary>.\Release\MIDITumbler.lib</ImportLibrary>
-      <AdditionalLibraryDirectories>C:\Program Files\DevStudio\MyProjects\VST Plugins\Common;%(AdditionalLibraryDirectories)</AdditionalLibraryDirectories>
-      <AdditionalDependencies>msvcrt.lib;odbc32.lib;odbccp32.lib;opengl32.lib;glu32.lib;%(AdditionalDependencies)</AdditionalDependencies>
+      <ImportLibrary>.\Release\$(ProjectName).lib</ImportLibrary>
+      <AdditionalLibraryDirectories>%(AdditionalLibraryDirectories)</AdditionalLibraryDirectories>
+      <AdditionalDependencies>box2d.lib;opengl32.lib;glu32.lib;msvcprt.lib;%(AdditionalDependencies)</AdditionalDependencies>
       <ModuleDefinitionFile>.\vstplug.def</ModuleDefinitionFile>
+      <GenerateDebugInformation>false</GenerateDebugInformation>
     </Link>
   </ItemDefinitionGroup>
   <ItemGroup>

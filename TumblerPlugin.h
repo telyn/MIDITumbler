@@ -181,7 +181,7 @@ public:
 	enum
 	{
 		numPrograms = 1,	///<Number of programs this plugin has.
-		versionNumber = 100,///<The current version of the plugin.
+		versionNumber = 110 ,///<The current version of the plugin.
 		maxNumEvents = 250	///<The maximum number of events in our MIDI queue.
 	};
 

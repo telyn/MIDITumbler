@@ -157,6 +157,7 @@
     <ClInclude Include="..\..\lib\vstsdk2.4\public.sdk\source\vst2.x\aeffeditor.h" />
     <ClInclude Include="..\..\lib\vstsdk2.4\public.sdk\source\vst2.x\audioeffect.h" />
     <ClInclude Include="..\..\lib\vstsdk2.4\public.sdk\source\vst2.x\audioeffectx.h" />
+    <ClInclude Include="resource.h" />
     <ClInclude Include="rgbhsv.h" />
     <ClInclude Include="TumblerEditor.h" />
     <ClInclude Include="TumblerNote.h" />
@@ -167,6 +168,9 @@
   </ItemGroup>
   <ItemGroup>
     <CustomBuild Include="vstplug.def" />
+  </ItemGroup>
+  <ItemGroup>
+    <ResourceCompile Include="MidiTumbler.rc" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
   <ImportGroup Label="ExtensionTargets">

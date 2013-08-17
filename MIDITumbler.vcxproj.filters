@@ -74,10 +74,14 @@
     <ClInclude Include="TumblerController.h">
       <Filter>Source Files</Filter>
     </ClInclude>
+    <ClInclude Include="resource.h" />
   </ItemGroup>
   <ItemGroup>
     <CustomBuild Include="vstplug.def">
       <Filter>Source Files</Filter>
     </CustomBuild>
+  </ItemGroup>
+  <ItemGroup>
+    <ResourceCompile Include="MidiTumbler.rc" />
   </ItemGroup>
 </Project>

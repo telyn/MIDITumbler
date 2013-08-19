@@ -45,7 +45,7 @@ rgbColour hsv2rgb(hsvColour in)
     rgbColour         out;
 
     if(in.s <= 0.0) {       // < is bogus, just shuts up warnings
-        if(_isnan(in.h)) {   // in.h == NAN
+        if(isnan(in.h)) {   // in.h == NAN
             out.r = in.v;
             out.g = in.v;
             out.b = in.v;

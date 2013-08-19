@@ -1,6 +1,7 @@
 #ifndef RGBHSV_H
 #define RGBHSV_H
 #include <float.h>
+#include <cmath>
 
 typedef struct {
     double r;       // percent

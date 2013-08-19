@@ -306,6 +306,51 @@ float TumblerPlugin::getParameter(VstInt32 index)
 	return parameters[index];
 }
 
+bool TumblerPlugin::getParameterProperties(VstInt32 index, VstParameterProperties *properties) {
+	switch(index) {
+		case ROTATIONSPEED:
+			properties->displayIndex = 0;
+			properties->largeStepFloat = 1.0f/36.0f;
+			properties->smallStepFloat = 1.0f/3600.0f;
+			strcpy(properties->label, "Rotation Speed");
+			properties->maxInteger = 360;
+			properties->minInteger = 0;
+			properties->stepFloat = 1.0f/360.0f;
+			properties->flags = kVstParameterUsesFloatStep | kVstParameterUsesIntegerMinMax | kVstParameterCanRamp | kVstParameterSupportsDisplayIndex;
+			return true;
+		case OPENNESS:
+			properties->displayIndex = 1;
+			properties->largeStepFloat = 0.1f;
+			properties->smallStepFloat = 0.01f;
+			strcpy(properties->label, "Openness");
+
+			properties->stepFloat = 0.05f;
+			properties->flags = kVstParameterUsesFloatStep | kVstParameterUsesIntegerMinMax | kVstParameterCanRamp | kVstParameterSupportsDisplayIndex;
+			return true;
+		case GRAVITY:
+			properties->displayIndex = 0;
+			properties->largeStepFloat = 1.0f/30.0f;
+			properties->smallStepFloat = 1.0f/300.0f;
+			strcpy(properties->label, "Gravity");
+			properties->maxInteger = 600;
+			properties->minInteger = 0;
+			properties->stepFloat = 1.0f/60.0f;
+			properties->flags = kVstParameterUsesFloatStep | kVstParameterUsesIntegerMinMax | kVstParameterCanRamp | kVstParameterSupportsDisplayIndex;
+			return true;
+		case RESTITUTION:
+			properties->displayIndex = 0;
+			properties->largeStepFloat = 0.1f;
+			properties->smallStepFloat = 0.01f;
+			strcpy(properties->label, "Restitution");
+			properties->maxInteger = 100;
+			properties->minInteger = 0;
+			properties->stepFloat = 0.1f;
+			properties->flags = kVstParameterUsesFloatStep | kVstParameterUsesIntegerMinMax | kVstParameterCanRamp | kVstParameterSupportsDisplayIndex;
+			return true;
+	}
+	return false;
+}
+
 //----------------------------------------------------------------------------
 void TumblerPlugin::getParameterLabel(VstInt32 index, char *label)
 {
@@ -356,6 +401,7 @@ void TumblerPlugin::getParameterName(VstInt32 index, char *label)
 	} else if(index == RESTITUTION) {
 		strcpy(label, "Restitution");
 	}
+	
 }
 
 //----------------------------------------------------------------------------

@@ -89,7 +89,7 @@
       <GenerateDebugInformation>true</GenerateDebugInformation>
       <SubSystem>Windows</SubSystem>
       <IgnoreAllDefaultLibraries>false</IgnoreAllDefaultLibraries>
-      <OutputFile>Debug/$(ProjectName).dll</OutputFile>
+      <OutputFile>Debug/MidiTumbler.dll</OutputFile>
       <ImportLibrary>.\Debug\$(ProjectName).lib</ImportLibrary>
       <AdditionalDependencies>box2d.lib;opengl32.lib;glu32.lib;msvcprt.lib;%(AdditionalDependencies)</AdditionalDependencies>
       <ModuleDefinitionFile>.\vstplug.def</ModuleDefinitionFile>
@@ -133,7 +133,7 @@
       <LinkDLL>true</LinkDLL>
       <SubSystem>Windows</SubSystem>
       <IgnoreAllDefaultLibraries>false</IgnoreAllDefaultLibraries>
-      <OutputFile>Release/MIDITumbler.dll</OutputFile>
+      <OutputFile>Release/$(ProjectName).dll</OutputFile>
       <ImportLibrary>.\Release\$(ProjectName).lib</ImportLibrary>
       <AdditionalLibraryDirectories>%(AdditionalLibraryDirectories)</AdditionalLibraryDirectories>
       <AdditionalDependencies>box2d.lib;opengl32.lib;glu32.lib;msvcprt.lib;%(AdditionalDependencies)</AdditionalDependencies>

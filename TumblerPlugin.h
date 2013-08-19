@@ -121,6 +121,8 @@ public:
 	void setParameter(VstInt32 index, float value);
 	///	Returns the value of the indexed parameter.
 	float getParameter(VstInt32 index);
+	/// Returns properties for the indexed parameter.
+	bool getParameterProperties(VstInt32 index, VstParameterProperties *properties);
 	///	Returns the label (units) of the indexed parameter.
 	void getParameterLabel(VstInt32 index, char *label);
 	///	Returns the value of the indexed parameter as text.

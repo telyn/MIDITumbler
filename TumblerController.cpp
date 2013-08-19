@@ -173,7 +173,7 @@ void TumblerController::timerCallback() {
 		}
 	}
 
-	this->world.Step(0.015f, 6, 2);
+	this->world.Step(0.01666666666f, 6, 2);
 
 	//send MIDI noteoffs for all notes... this is kinda inefficient but WHATEVER i@M OVER IT
 	// I'll fix it later..

@@ -3,7 +3,7 @@ MidiTumbler
 
 This is the git repository, for the hardcore hacker types. If you just want to ***use*** MidiTumbler, download it from [my website](http://aetheria.co.uk/miditumbler.html).
 
-It's been built for Windows and OS X succesfully. A Linux port is unlikely.
+It's been built for Windows and OS X succesfully, though it doesn't appear to work under OS X. A Linux port is unlikely.
 
 Setting up a build environment
 ====================

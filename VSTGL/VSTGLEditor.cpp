@@ -211,8 +211,8 @@ bool VSTGLEditor::open(void *ptr)
 		{
 			Rect r = {0,
 					  0,
-					  (_rect.right-_rect.left),
-					  (_rect.bottom-_rect.top)};
+					  static_cast<short>((_rect.right-_rect.left)),
+					  static_cast<short>((_rect.bottom-_rect.top))};
 
 			//Create our control/HIView
 			CreateCustomControl(NULL, &r, &controlSpec, NULL, &controlRef);

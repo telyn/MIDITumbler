@@ -40,7 +40,7 @@ numEvents(0),
 numPendingEvents(0),
 frames(0),
 effectName("Tumbler"),
-vendorName("Hannah Roat (aetheria.co.uk, github.com/nornalbion)")
+vendorName("Telyn Roat (aetheria.co.uk, github.com/telyn)")
 {
 	int i;
 
@@ -81,7 +81,7 @@ vendorName("Hannah Roat (aetheria.co.uk, github.com/nornalbion)")
     setUniqueID('AETm');
 
 	//Construct editor here.
-	editor = new TumblerEditor(this);
+	editor = (AEffEditor*)new TumblerEditor(this);
 
 	this->controller = new TumblerController(this);
 }
@@ -224,8 +224,6 @@ void TumblerPlugin::suspend()
 //----------------------------------------------------------------------------
 void TumblerPlugin::setProgram(VstInt32 program)
 {
-	int i;
-
 	curProgram = program;
 
 	setParameter(0, programs[curProgram].rotationspeed);

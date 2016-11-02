@@ -31,6 +31,11 @@
 #include "Box2D/Box2D.h"
 #include "TumblerNote.h"
 
+#include <utility>
+
+#define TUMBLEREDITOR_WIDTH 400
+#define TUMBLEREDITOR_HEIGHT 300
+
 ///	Simple VSTGL example.
 class TumblerEditor : public VSTGLEditor,
 					  public Timer
@@ -40,10 +45,6 @@ class TumblerEditor : public VSTGLEditor,
 	TumblerEditor(AudioEffect *effect);
 	///	Destructor.
 	~TumblerEditor();
-
-	// for converting from box2D coords to gl coords
-	static const int WIDTH = 400;
-	static const int HEIGHT = 300;
 
 	///	Called when the Gui's window is opened.
 	void guiOpen();

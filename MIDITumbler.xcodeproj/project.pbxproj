@@ -258,7 +258,7 @@
 		B77E580517C24F4F00DC1D16 /* vstplugmain.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = vstplugmain.cpp; sourceTree = "<group>"; };
 		B77E59C917C2571500DC1D16 /* Quartz.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Quartz.framework; path = System/Library/Frameworks/Quartz.framework; sourceTree = SDKROOT; };
 		B77E59CB17C257CE00DC1D16 /* QuartzCore.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = QuartzCore.framework; path = System/Library/Frameworks/QuartzCore.framework; sourceTree = SDKROOT; };
-		B77E59CF17C25B2600DC1D16 /* libBox2D.a */ = {isa = PBXFileReference; lastKnownFileType = archive.ar; name = libBox2D.a; path = ../lib/Box2D_v2.2.1/Build/xcode4/build/Release/libBox2D.a; sourceTree = "<group>"; };
+		B77E59CF17C25B2600DC1D16 /* libBox2D.a */ = {isa = PBXFileReference; lastKnownFileType = archive.ar; path = libBox2D.a; sourceTree = SOURCE_ROOT; };
 		B77E59D217C25D7E00DC1D16 /* AGL.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AGL.framework; path = System/Library/Frameworks/AGL.framework; sourceTree = SDKROOT; };
 /* End PBXFileReference section */
 
@@ -676,7 +676,7 @@
 		B77E56BF17C2379200DC1D16 /* Project object */ = {
 			isa = PBXProject;
 			attributes = {
-				LastUpgradeCheck = 0460;
+				LastUpgradeCheck = 0620;
 				ORGANIZATIONNAME = "Hannah Roat";
 			};
 			buildConfigurationList = B77E56C217C2379200DC1D16 /* Build configuration list for PBXProject "MIDITumbler" */;
@@ -721,7 +721,6 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ALWAYS_SEARCH_USER_PATHS = NO;
-				ARCHS = "$(ARCHS_STANDARD_32_BIT)";
 				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
 				CLANG_CXX_LIBRARY = "libc++";
 				CLANG_WARN_CONSTANT_CONVERSION = YES;
@@ -747,7 +746,7 @@
 				"HEADER_SEARCH_PATHS[arch=*]" = "";
 				MACOSX_DEPLOYMENT_TARGET = 10.7;
 				ONLY_ACTIVE_ARCH = YES;
-				SDKROOT = macosx10.7;
+				SDKROOT = macosx;
 			};
 			name = Debug;
 		};
@@ -755,7 +754,6 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ALWAYS_SEARCH_USER_PATHS = NO;
-				ARCHS = "$(ARCHS_STANDARD_32_BIT)";
 				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
 				CLANG_CXX_LIBRARY = "libc++";
 				CLANG_WARN_CONSTANT_CONVERSION = YES;
@@ -773,7 +771,7 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
 				MACOSX_DEPLOYMENT_TARGET = 10.7;
-				SDKROOT = macosx10.7;
+				SDKROOT = macosx;
 			};
 			name = Release;
 		};
@@ -781,19 +779,29 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ADDITIONAL_SDKS = "";
+				CLANG_CXX_LIBRARY = "compiler-default";
+				COMBINE_HIDPI_IMAGES = YES;
+				DEBUG_INFORMATION_FORMAT = dwarf;
 				EXECUTABLE_PREFIX = lib;
+				GCC_C_LANGUAGE_STANDARD = c11;
+				GCC_ENABLE_CPP_EXCEPTIONS = NO;
+				GCC_ENABLE_CPP_RTTI = YES;
 				"HEADER_SEARCH_PATHS[arch=*]" = (
-					../lib/Box2D_v2.2.1,
+					"$(inherited)",
+					/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/include,
+					../lib/Box2D_v2.3.0,
 					../lib/vstsdk2.4/public.sdk/source/vst2.x,
 					../lib/vstsdk2.4/pluginterfaces/vst2.x,
 					../lib/vstsdk2.4/vstgui.sf/vstgui,
 					../lib/vstsdk2.4,
 				);
 				LIBRARY_SEARCH_PATHS = (
-					../lib/Box2D_v2.2.1/Build/xcode4/build/Debug,
-					"\"$(SRCROOT)/../lib/Box2D_v2.2.1/Build/xcode4/build/Release\"",
+					../lib/Box2D_v2.3.0/Build/xcode4/build/Debug,
+					"\"$(SRCROOT)/../lib/Box2D_v2.3.0/Build/xcode4/build/Release\"",
 				);
+				ONLY_ACTIVE_ARCH = YES;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				SDKROOT = macosx;
 			};
 			name = Debug;
 		};
@@ -802,10 +810,15 @@
 			buildSettings = {
 				ADDITIONAL_SDKS = "";
 				"ADDITIONAL_SDKS[arch=*]" = "";
-				ARCHS = "$(ARCHS_STANDARD_32_BIT)";
+				CLANG_CXX_LIBRARY = "compiler-default";
+				COMBINE_HIDPI_IMAGES = YES;
+				DEBUG_INFORMATION_FORMAT = dwarf;
 				EXECUTABLE_PREFIX = lib;
+				GCC_C_LANGUAGE_STANDARD = c11;
+				GCC_ENABLE_CPP_EXCEPTIONS = NO;
+				GCC_ENABLE_CPP_RTTI = YES;
 				"HEADER_SEARCH_PATHS[arch=*]" = (
-					../lib/Box2D_v2.2.1,
+					../lib/Box2D_v2.3.0,
 					../lib/vstsdk2.4/public.sdk/source/vst2.x,
 					../lib/vstsdk2.4/pluginterfaces/vst2.x,
 					../lib/vstsdk2.4/vstgui.sf/vstgui,
@@ -815,8 +828,10 @@
 					"$(inherited)",
 					"\"$(SRCROOT)/../lib/Box2D_v2.2.1/Build/xcode4/build/Release\"",
 				);
-				"LIBRARY_SEARCH_PATHS[arch=*]" = ../lib/Box2D_v2.2.1/Build/xcode4/build/Release;
+				"LIBRARY_SEARCH_PATHS[arch=*]" = ../lib/Box2D_v2.3.0/Build/xcode4/build/Release;
+				ONLY_ACTIVE_ARCH = YES;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				SDKROOT = macosx;
 			};
 			name = Release;
 		};
@@ -839,6 +854,7 @@
 				B77E56CD17C2379200DC1D16 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};

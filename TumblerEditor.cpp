@@ -31,13 +31,13 @@ Timer(30) //30ms == ~30fps?
 	this->tumbler = NULL;
 	this->notes_count = -1;
 	//Set the opengl context's size - This must be called here!
-	setRect(0, 0, TumblerEditor::WIDTH, TumblerEditor::HEIGHT);
+    setRect(0, 0, TUMBLEREDITOR_WIDTH, TUMBLEREDITOR_HEIGHT);
 }
 
 //----------------------------------------------------------------------------
 TumblerEditor::~TumblerEditor()
 {
-	
+    delete this->baseJoint;
 }
 
 //----------------------------------------------------------------------------
@@ -46,7 +46,7 @@ void TumblerEditor::guiOpen()
 	//Setup OpenGL stuff.
 	glClearColor(0.0f, 0.0f, 0.0f, 0.0f);
 
-	glViewport(0, 0, getWidth(), getHeight());
+    glViewport(0, 0, std::move(*this).getWidth(), std::move(*this).getHeight());
 
     //Position viewer.
     glMatrixMode(GL_MODELVIEW);

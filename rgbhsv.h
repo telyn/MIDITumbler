@@ -5,6 +5,10 @@
 
 #ifdef WIN32
 #define isnan(x) _isnan(x)
+#else
+#ifdef MACX
+#define isnan(x) std::isnan(x)
+#endif
 #endif
 
 typedef struct {
